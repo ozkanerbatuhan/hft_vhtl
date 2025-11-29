@@ -5,3 +5,6 @@ xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/h
 xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
+xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
+xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
+xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 

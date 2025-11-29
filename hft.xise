@@ -162,6 +162,7 @@
       <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
       <library xil_pn:name="ethernet_mac"/>
     </file>
+    <file xil_pn:name="packet_builder_with_timer.vhd" xil_pn:type="FILE_VHDL"/>
   </files>
 
   <properties>

@@ -33,7 +33,6 @@ entity top is
     Port (
         i_clk_50mhz   : in  STD_LOGIC;
         i_reset_n     : in  STD_LOGIC;
-        SW            : in  STD_LOGIC_VECTOR(3 downto 0);
         MII_RX_CLK    : in  STD_LOGIC;
         MII_RXD       : in  STD_LOGIC_VECTOR (3 downto 0);
         MII_RX_DV     : in  STD_LOGIC;
@@ -45,7 +44,6 @@ entity top is
         MDC           : out STD_LOGIC;
         MDIO          : inout STD_LOGIC;
         o_phy_reset_n : out STD_LOGIC;
-        LED           : out STD_LOGIC_VECTOR(7 downto 0)
     );
 end top;
 
@@ -55,7 +53,6 @@ architecture Behavioral of top is
         Port (
             i_clk_50mhz   : in  STD_LOGIC;
             i_reset_n     : in  STD_LOGIC;
-            SW            : in  STD_LOGIC_VECTOR(3 downto 0);
             MII_RX_CLK    : in  STD_LOGIC;
             MII_RXD       : in  STD_LOGIC_VECTOR (3 downto 0);
             MII_RX_DV     : in  STD_LOGIC;
@@ -67,42 +64,58 @@ architecture Behavioral of top is
             MDC           : out STD_LOGIC;
             MDIO          : inout STD_LOGIC;
             o_phy_reset_n : out STD_LOGIC;
-            LED           : out STD_LOGIC_VECTOR(7 downto 0)
         );
     end component;
-
-    component xor_ann is
+    component packet_builder_with_timer is
+        Generic (
+            TIMER_WIDTH : integer := 32;  -- Zaman sayacı genişliği
+            FIFO_DEPTH  : integer := 16   -- Kaç adet işlem üst üste gelebilir? (Pipeline derinliği)
+        );
+        Port (
+            i_clk          : in  STD_LOGIC;
+            i_reset_n      : in  STD_LOGIC;
+            
+            -- GİRİŞ: ANN'e veri girdiği an tetiklenecek
+            i_start_trigger: in  STD_LOGIC;  -- "Veri geldi" sinyali (Parser'dan)
+            
+            -- GİRİŞ: ANN sonucu hazır olduğunda tetiklenecek
+            i_ann_result   : in  STD_LOGIC;  -- ANN'in 1 veya 0 sonucu
+            i_ann_done     : in  STD_LOGIC;  -- "Sonuç hazır" sinyali (ANN'den)
+            
+            -- ÇIKIŞ: Ethernet'e gönderilecek paketlenmiş veri
+            o_tx_data      : out STD_LOGIC_VECTOR(31 downto 0); -- 32-bit veri çıkışı
+            o_tx_valid     : out STD_LOGIC   -- "Paket hazır, gönder" sinyali
+        );
+    end component;
+    component hft_network is
         Port (
             clock   : in  STD_LOGIC;
             reset   : in  STD_LOGIC;
-            xor_in  : in  STD_LOGIC_VECTOR(1 downto 0);
-            xor_out : out STD_LOGIC
+            hft_in  : in  STD_LOGIC_VECTOR(1 downto 0);
+            hft_out : out STD_LOGIC
+        );
+    end component;
+    component led_driver is
+        Port (
+            i_rx_clock    : in  STD_LOGIC;
+            i_rx_reset    : in  STD_LOGIC;
+            i_rx_frame    : in  STD_LOGIC;
+            o_led         : out STD_LOGIC_VECTOR(7 downto 0)
         );
     end component;
 
-    signal clk_50mhz : STD_LOGIC;
-    signal reset_n : STD_LOGIC;
-    signal SW : STD_LOGIC_VECTOR(3 downto 0);
-    signal MII_RX_CLK : STD_LOGIC;
-    signal MII_RXD : STD_LOGIC_VECTOR (3 downto 0);
-    signal MII_RX_DV : STD_LOGIC;
-    signal MII_RX_ER : STD_LOGIC;
-    signal MII_TX_CLK : STD_LOGIC;
-    signal MII_TXD : STD_LOGIC_VECTOR (3 downto 0);
-    signal MII_TX_EN : STD_LOGIC;
-    signal MII_TX_ER : STD_LOGIC;
-    signal MDC : STD_LOGIC;
-    signal MDIO : STD_LOGIC;
-    signal o_phy_reset_n : STD_LOGIC;
-    signal LED : STD_LOGIC_VECTOR(7 downto 0);
+    -- Internal signal for LED output from ethernet_top
+    signal ethernet_led : STD_LOGIC_VECTOR(7 downto 0);
+    -- Internal signal for XOR output
+    signal xor_output : STD_LOGIC;
 
 begin
 
     ethernet_top_inst : ethernet_top
         Port map (
-            i_clk_50mhz => clk_50mhz,
-            i_reset_n => reset_n,
-            SW => SW,
+            i_clk_50mhz => i_clk_50mhz,
+            i_reset_n => i_reset_n,
+
             MII_RX_CLK => MII_RX_CLK,
             MII_RXD => MII_RXD,
             MII_RX_DV => MII_RX_DV,
@@ -114,34 +127,32 @@ begin
             MDC => MDC,
             MDIO => MDIO,
             o_phy_reset_n => o_phy_reset_n,
-            LED => LED
         );
-
-    clk_50mhz <= i_clk_50mhz;
-    reset_n <= i_reset_n;
-    SW <= i_SW(3 downto 0);
-    MII_RX_CLK <= i_MII_RX_CLK;
-    MII_RXD <= i_MII_RXD;
-    MII_RX_DV <= i_MII_RX_DV;
-    MII_RX_ER <= i_MII_RX_ER;
-    MII_TX_CLK <= i_MII_TX_CLK;
-    MII_TXD <= i_MII_TXD(3 downto 0);
-    MII_TX_EN <= i_MII_TX_EN;
-    MII_TX_ER <= i_MII_TX_ER;
-    MDC <= i_MDC;
-    MDIO <= i_MDIO;
-    o_phy_reset_n <= i_o_phy_reset_n;
-    LED <= i_LED(7 downto 0);
-
     
-    xor_ann_inst : xor_ann
+    packet_builder_with_timer_inst : packet_builder_with_timer
         Port map (
-            clock => clk_50mhz,
-            reset => reset_n,
-            xor_in => SW,
-            xor_out => LED(0)
+            i_clk => i_clk_50mhz,
+            i_reset_n => i_reset_n,
+            i_start_trigger => '0',
+            i_ann_result => xor_output,
+            i_ann_done => '0',
+            o_tx_data => open,
+            o_tx_valid => open
         );
-        
-
+        led_driver_inst : component led_driver
+            port map (
+                i_rx_clock => to_std_logic(s_rx_clock),
+                i_rx_reset => to_std_logic(s_rx_reset),
+                i_rx_frame => to_std_logic(s_rx_frame),
+                o_led      => LED
+            );
+    -- HFT Network instance using first 2 bits of SW
+    hft_network_inst : hft_network
+        Port map (
+            clock => i_clk_50mhz,
+            reset => i_reset_n,
+            hft_in => "00",
+            hft_out => "0"
+        );        
 
 end Behavioral;

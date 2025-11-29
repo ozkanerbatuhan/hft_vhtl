@@ -1,24 +1,29 @@
-V3 66
+V3 70
 FL /home/ise/ISE_146/hft/ann/main.vhd 2025/10/11.15:41:33 P.20131013
-EN work/xor_ann 1764375765 FL /home/ise/ISE_146/hft/ann/main.vhd \
+EN work/xor_ann 1764376871 FL /home/ise/ISE_146/hft/ann/main.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
-      PB work/sigmoid_functions 1764375754
-AR work/xor_ann/Behavioral 1764375766 \
-      FL /home/ise/ISE_146/hft/ann/main.vhd EN work/xor_ann 1764375765 \
+      PB work/sigmoid_functions 1764409782
+AR work/xor_ann/Behavioral 1764376872 \
+      FL /home/ise/ISE_146/hft/ann/main.vhd EN work/xor_ann 1764376871 \
       CP xor_network
+EN work/hft_network 0 FL /home/ise/ISE_146/hft/ann/main.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB work/sigmoid_functions 1764409782
+AR work/hft_network/Behavioral 0 \
+      FL /home/ise/ISE_146/hft/ann/main.vhd EN work/hft_network 0 CP hft_network
 FL /home/ise/ISE_146/hft/ann/sigmoid_functions.vhd 2025/10/11.17:13:18 P.20131013
-PH work/sigmoid_functions 1764375753 \
+PH work/sigmoid_functions 1764409781 \
       FL /home/ise/ISE_146/hft/ann/sigmoid_functions.vhd PB ieee/std_logic_1164 1381692176 \
       PB ieee/NUMERIC_STD 1381692181 PB ieee/MATH_REAL 1381692182
-PB work/sigmoid_functions 1764375754 \
+PB work/sigmoid_functions 1764409782 \
       FL /home/ise/ISE_146/hft/ann/sigmoid_functions.vhd \
-      PH work/sigmoid_functions 1764375753
+      PH work/sigmoid_functions 1764409781
 FL /home/ise/ISE_146/hft/ann/xor_network.vhd 2025/10/11.17:07:04 P.20131013
-EN work/xor_network 1764375757 FL /home/ise/ISE_146/hft/ann/xor_network.vhd \
+EN work/xor_network 1764409795 FL /home/ise/ISE_146/hft/ann/xor_network.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
-      PB work/sigmoid_functions 1764375754
-AR work/xor_network/Behavioral 1764375758 \
-      FL /home/ise/ISE_146/hft/ann/xor_network.vhd EN work/xor_network 1764375757
+      PB work/sigmoid_functions 1764409782
+AR work/xor_network/Behavioral 1764409796 \
+      FL /home/ise/ISE_146/hft/ann/xor_network.vhd EN work/xor_network 1764409795
 FL /home/ise/ISE_146/hft/ethernet/ethernet.vhd 2025/10/26.17:18:24 P.20131013
 EN work/ethernet 0 FL /home/ise/ISE_146/hft/ethernet/ethernet.vhd \
       PB ieee/std_logic_1164 1381692176 PH work/ethernet_types 0 \
@@ -35,10 +40,10 @@ EN work/framing 0 FL /home/ise/ISE_146/hft/ethernet/framing.vhd \
 AR work/framing/rtl 0 \
       FL /home/ise/ISE_146/hft/ethernet/framing.vhd EN work/framing 0
 FL /home/ise/ISE_146/hft/ethernet/led_driver.vhd 2025/10/27.01:09:45 P.20131013
-EN work/led_driver 1764375761 FL /home/ise/ISE_146/hft/ethernet/led_driver.vhd \
+EN work/led_driver 1764376867 FL /home/ise/ISE_146/hft/ethernet/led_driver.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/led_driver/Behavioral 1764375762 \
-      FL /home/ise/ISE_146/hft/ethernet/led_driver.vhd EN work/led_driver 1764375761
+AR work/led_driver/Behavioral 1764376868 \
+      FL /home/ise/ISE_146/hft/ethernet/led_driver.vhd EN work/led_driver 1764376867
 FL /home/ise/ISE_146/hft/ethernet/miim.vhd 2025/10/26.17:20:07 P.20131013
 EN work/miim 0 FL /home/ise/ISE_146/hft/ethernet/miim.vhd PB ieee/std_logic_1164 1381692176 \
       PH work/miim_types 0 PH work/utility 0
@@ -60,7 +65,7 @@ FL /home/ise/ISE_146/hft/ethernet/mii_gmii_io_simple.vhd 2025/10/26.17:20:12 P.2
 AR work/mii_gmii_io/simple 0 \
       FL /home/ise/ISE_146/hft/ethernet/mii_gmii_io_simple.vhd \
       EN work/mii_gmii_io 0 PB ieee/std_logic_1164 1381692176 LB ethernet_mac \
-      PH ethernet_mac/ethernet_types 1764375732
+      PH ethernet_mac/ethernet_types 1764409772
 FL /home/ise/ISE_146/hft/ethernet/reset_generator.vhd 2025/10/26.17:20:04 P.20131013
 EN work/reset_generator 0 FL /home/ise/ISE_146/hft/ethernet/reset_generator.vhd \
       PB ieee/std_logic_1164 1381692176 PH work/ethernet_types 0
@@ -76,21 +81,22 @@ AR work/single_signal_synchronizer/simple 0 \
       FL /home/ise/ISE_146/hft/ethernet/single_signal_synchronizer_simple.vhd \
       EN work/single_signal_synchronizer 0 PB ieee/std_logic_1164 1381692176
 FL /home/ise/ISE_146/hft/ethernet/switch_driver.vhd 2025/10/27.01:11:48 P.20131013
-EN work/switch_driver 1764375759 \
+EN work/switch_driver 1764376865 \
       FL /home/ise/ISE_146/hft/ethernet/switch_driver.vhd PB ieee/std_logic_1164 1381692176 \
       PB ieee/NUMERIC_STD 1381692181 LB ethernet_mac \
-      PH ethernet_mac/ethernet_types 1764375732
-AR work/switch_driver/Behavioral 1764375760 \
-      FL /home/ise/ISE_146/hft/ethernet/switch_driver.vhd EN work/switch_driver 1764375759
+      PH ethernet_mac/ethernet_types 1764409772
+AR work/switch_driver/Behavioral 1764376866 \
+      FL /home/ise/ISE_146/hft/ethernet/switch_driver.vhd EN work/switch_driver 1764376865
 FL /home/ise/ISE_146/hft/ethernet/top.vhd 2025/11/29.00:21:00 P.20131013
-EN work/ethernet_top 1764375763 FL /home/ise/ISE_146/hft/ethernet/top.vhd \
+EN work/ethernet_top 1764376869 FL /home/ise/ISE_146/hft/ethernet/top.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
-      LB ethernet_mac PH ethernet_mac/ethernet_types 1764375732 \
-      PB ethernet_mac/miim_types 1764375734
-AR work/ethernet_top/Behavioral 1764375764 \
-      FL /home/ise/ISE_146/hft/ethernet/top.vhd EN work/ethernet_top 1764375763 \
-      CP ethernet CP switch_driver CP led_driver
-FL /home/ise/ISE_146/hft/top.vhd 2025/11/29.00:06:40 P.20131013
-EN work/top 0 FL /home/ise/ISE_146/hft/top.vhd PB ieee/std_logic_1164 1381692176
-AR work/top/Behavioral 0 \
-      FL /home/ise/ISE_146/hft/top.vhd EN work/top 0 CP ethernet_top CP xor_ann
+      LB ethernet_mac PH ethernet_mac/ethernet_types 1764409772 \
+      PB ethernet_mac/miim_types 1764409774
+AR work/ethernet_top/Behavioral 1764376870 \
+      FL /home/ise/ISE_146/hft/ethernet/top.vhd EN work/ethernet_top 1764376869 \
+      CP ethernet
+FL /home/ise/ISE_146/hft/top.vhd 2025/11/29.00:31:43 P.20131013
+EN work/top 1764376873 FL /home/ise/ISE_146/hft/top.vhd PB ieee/std_logic_1164 1381692176
+AR work/top/Behavioral 1764376874 \
+      FL /home/ise/ISE_146/hft/top.vhd EN work/top 1764376873 CP ethernet_top \
+      CP packet_builder_with_timer CP led_driver CP hft_network

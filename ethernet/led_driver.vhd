@@ -3,7 +3,6 @@
 -- RX Activity Detection and LED Display
 -- LED<7>   : RX Activity indicator (stays ON for 1 second after frame received)
 -- LED<6:4> : Reserved (constant '0')
--- LED<3:0> : Switch feedback display
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -17,9 +16,6 @@ entity led_driver is
         
         -- RX Interface (from Ethernet MAC)
         i_rx_frame    : in  STD_LOGIC;
-        
-        -- Switch Input (for feedback display)
-        i_switch      : in  STD_LOGIC_VECTOR(3 downto 0);
         
         -- LED Output
         o_led         : out STD_LOGIC_VECTOR(7 downto 0)
@@ -66,7 +62,6 @@ begin
     ----------------------------------------------------------------------------------
     o_led(7)          <= s_rx_activity;  -- RX Activity
     o_led(6 downto 4) <= "000";          -- Reserved
-    o_led(3 downto 0) <= i_switch;       -- Switch feedback
 
 end Behavioral;
 

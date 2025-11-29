@@ -19,8 +19,6 @@ entity ethernet_top is
         i_clk_50mhz   : in  STD_LOGIC;
         i_reset_n     : in  STD_LOGIC;
 
-        -- Switch Inputs (4-bit value)
-        SW            : in  STD_LOGIC_VECTOR(3 downto 0);
 
         -- MII Interface (PHY pins)
         MII_RX_CLK    : in  STD_LOGIC;
@@ -39,12 +37,6 @@ entity ethernet_top is
 
         -- PHY Reset Pin
         o_phy_reset_n : out STD_LOGIC;
-        
-        -- LED Outputs
-        -- LED<7>   : RX Activity (frame received)
-        -- LED<6:4> : Debug (reserved)
-        -- LED<3:0> : Switch feedback
-        LED           : out STD_LOGIC_VECTOR(7 downto 0)
     );
 end ethernet_top;
 
@@ -53,48 +45,6 @@ end ethernet_top;
 ----------------------------------------------------------------------------------
 architecture Behavioral of ethernet_top is
 
-    -- Component Declaration: LED Driver
-    component led_driver is
-        Port (
-            i_rx_clock    : in  STD_LOGIC;
-            i_rx_reset    : in  STD_LOGIC;
-            i_rx_frame    : in  STD_LOGIC;
-            i_switch      : in  STD_LOGIC_VECTOR(3 downto 0);
-            o_led         : out STD_LOGIC_VECTOR(7 downto 0)
-        );
-    end component;
-    
-    -- Component Declaration: Switch Driver
-    component switch_driver is
-        Generic (
-            G_MAC_ADDRESS  : std_logic_vector(47 downto 0) := x"000A35123456"
-        );
-        Port (
-            i_tx_clock     : in  STD_LOGIC;
-            i_tx_reset     : in  STD_LOGIC;
-            i_switch       : in  STD_LOGIC_VECTOR(3 downto 0);
-            o_tx_enable    : out STD_LOGIC;
-            o_tx_data      : out STD_LOGIC_VECTOR(7 downto 0);
-            i_tx_byte_sent : in  STD_LOGIC;
-            i_tx_busy      : in  STD_LOGIC
-        );
-    end component;
-
-    -- Component Declaration: ChipScope ICON (Control Interface)
-    component con is
-        Port (
-            CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0)
-        );
-    end component;
-    
-    -- Component Declaration: ChipScope ILA (Logic Analyzer)
-    component ila is
-        Port (
-            CONTROL : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
-            CLK     : IN STD_LOGIC;
-            TRIG0   : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
-        );
-    end component;
 
     -- Component Declaration for GitHub ethernet_mac
     component ethernet is
@@ -305,27 +255,7 @@ begin
             rx_error_o         => s_rx_error
         );
 
-    switch_driver_inst : component switch_driver
-        generic map (
-            G_MAC_ADDRESS => x"000A35123456"  -- Same as C_MAC_ADDRESS
-        )
-        port map (
-            i_tx_clock     => to_std_logic(s_tx_clock),
-            i_tx_reset     => to_std_logic(s_tx_reset),
-            i_switch       => SW,
-            o_tx_enable    => s_tx_enable_slv,
-            o_tx_data      => s_tx_data_slv,
-            i_tx_byte_sent => s_tx_byte_sent_slv,
-            i_tx_busy      => s_tx_busy_slv
-        );
 
-    led_driver_inst : component led_driver
-        port map (
-            i_rx_clock => to_std_logic(s_rx_clock),
-            i_rx_reset => to_std_logic(s_rx_reset),
-            i_rx_frame => to_std_logic(s_rx_frame),
-            i_switch   => SW,
-            o_led      => LED
-        );
+
 
 end Behavioral;

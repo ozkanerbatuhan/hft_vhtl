@@ -40,10 +40,10 @@ NET "MDIO" LOC = "U5"  | IOSTANDARD = LVCMOS33;
 #==============================================================
 # Switch Girişleri (4-bit değer seçimi için)
 #==============================================================
-NET "SW<0>" LOC = "L13" | IOSTANDARD = LVTTL | PULLUP;
-NET "SW<1>" LOC = "L14" | IOSTANDARD = LVTTL | PULLUP;
-NET "SW<2>" LOC = "H18" | IOSTANDARD = LVTTL | PULLUP;
-NET "SW<3>" LOC = "N17" | IOSTANDARD = LVTTL | PULLUP;
+#NET "SW<0>" LOC = "L13" | IOSTANDARD = LVTTL | PULLUP;
+#NET "SW<1>" LOC = "L14" | IOSTANDARD = LVTTL | PULLUP;
+#NET "SW<2>" LOC = "H18" | IOSTANDARD = LVTTL | PULLUP;
+#NET "SW<3>" LOC = "N17" | IOSTANDARD = LVTTL | PULLUP;
 
 #==============================================================
 # LED Çıkışları
