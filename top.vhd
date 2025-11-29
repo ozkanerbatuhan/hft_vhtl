@@ -43,7 +43,7 @@ entity top is
         MII_TX_ER     : out STD_LOGIC;
         MDC           : out STD_LOGIC;
         MDIO          : inout STD_LOGIC;
-        o_phy_reset_n : out STD_LOGIC;
+        o_phy_reset_n : out STD_LOGIC
     );
 end top;
 
@@ -63,7 +63,7 @@ architecture Behavioral of top is
             MII_TX_ER     : out STD_LOGIC;
             MDC           : out STD_LOGIC;
             MDIO          : inout STD_LOGIC;
-            o_phy_reset_n : out STD_LOGIC;
+            o_phy_reset_n : out STD_LOGIC
         );
     end component;
     component packet_builder_with_timer is
@@ -106,8 +106,8 @@ architecture Behavioral of top is
 
     -- Internal signal for LED output from ethernet_top
     signal ethernet_led : STD_LOGIC_VECTOR(7 downto 0);
-    -- Internal signal for XOR output
-    signal xor_output : STD_LOGIC;
+    -- Internal signal for HFT output
+    signal hft_output : STD_LOGIC;
 
 begin
 
@@ -126,7 +126,7 @@ begin
             MII_TX_ER => MII_TX_ER,
             MDC => MDC,
             MDIO => MDIO,
-            o_phy_reset_n => o_phy_reset_n,
+            o_phy_reset_n => o_phy_reset_n
         );
     
     packet_builder_with_timer_inst : packet_builder_with_timer
@@ -134,17 +134,17 @@ begin
             i_clk => i_clk_50mhz,
             i_reset_n => i_reset_n,
             i_start_trigger => '0',
-            i_ann_result => xor_output,
+            i_ann_result => hft_output,
             i_ann_done => '0',
             o_tx_data => open,
             o_tx_valid => open
         );
         led_driver_inst : component led_driver
             port map (
-                i_rx_clock => to_std_logic(s_rx_clock),
-                i_rx_reset => to_std_logic(s_rx_reset),
-                i_rx_frame => to_std_logic(s_rx_frame),
-                o_led      => LED
+                i_rx_clock => i_clk_50mhz,
+                i_rx_reset => i_reset_n,
+                i_rx_frame => MII_RX_DV,
+                o_led      => ethernet_led
             );
     -- HFT Network instance using first 2 bits of SW
     hft_network_inst : hft_network
@@ -152,7 +152,7 @@ begin
             clock => i_clk_50mhz,
             reset => i_reset_n,
             hft_in => "00",
-            hft_out => "0"
+            hft_out => hft_output
         );        
 
 end Behavioral;

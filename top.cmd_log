@@ -7,4 +7,4 @@ xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/h
 xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
-xst -intstyle ise -ifn "/home/ise/ISE_146/hft/top.xst" -ofn "/home/ise/ISE_146/hft/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 top.ngc top.ngd  

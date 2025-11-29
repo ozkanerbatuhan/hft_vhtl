@@ -1,2 +1,0 @@
-vhdl ethernet_mac "ethernet/ethernet_mac/ethernet_types.vhd"
-vhdl work "ethernet/switch_driver.vhd"

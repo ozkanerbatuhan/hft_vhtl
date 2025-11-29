@@ -29,14 +29,14 @@ entity ethernet_top is
         MII_TX_CLK    : in  STD_LOGIC;
         MII_TXD       : out STD_LOGIC_VECTOR (3 downto 0);
         MII_TX_EN     : out STD_LOGIC;
-        -- MII_TX_ER not used (GitHub ethernet_mac doesn't use it in MII mode)
+        MII_TX_ER     : out STD_LOGIC;
         
         -- MDIO Management Interface
         MDC           : out STD_LOGIC;
         MDIO          : inout STD_LOGIC;
 
         -- PHY Reset Pin
-        o_phy_reset_n : out STD_LOGIC;
+        o_phy_reset_n : out STD_LOGIC
     );
 end ethernet_top;
 

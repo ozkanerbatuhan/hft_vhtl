@@ -15,7 +15,7 @@ end hft_network;
 architecture Behavioral of hft_network is
 
     -- Component declaration for the HFT network
-    component hft_network is
+    component xor_network is
         Port (
             clock   : in  STD_LOGIC;
             reset   : in  STD_LOGIC;
@@ -27,7 +27,7 @@ architecture Behavioral of hft_network is
 begin
 
     -- Instantiate the HFT Network
-    U1_hft_network: hft_network
+    U1_hft_network: xor_network
         Port map (
             clock   => clock,
             reset   => reset,
