@@ -1,0 +1,61 @@
+#==============================================================
+# Ana Saat ve Reset
+# NOT: BU ÜÇ PİNİN "LOC" DEĞERİNİ KARTININ ŞEMASINDAN KONTROL ET!
+# SENİN "DOĞRU PİNLER" LİSTENDE BUNLAR YOKTU.
+#==============================================================
+NET "i_clk_50mhz"   LOC = "C9"  | IOSTANDARD = LVCMOS33;
+NET "i_reset_n"     LOC = "V4"  | IOSTANDARD = LVCMOS33;
+NET "o_phy_reset_n" LOC = "T17" | IOSTANDARD = LVCMOS33;  # VEYA KARTININ PHY RESET PİNİ NEYSE
+
+#==============================================================
+# Ethernet PHY (MII Arayüzü) - (Senin Doğru Pin Konumlarınla)
+#==============================================================
+# NOT: MII_COL ve MII_CRS pinleri GitHub ethernet_mac IP'sinde kullanılmıyor
+# Full-duplex modda gerekli değiller
+
+# RX Grubu (Senin doğru pin konumların: V3, V2, V8, T11, U11, V14, U14)
+NET "MII_RX_CLK"  LOC = "V3"  | IOSTANDARD = LVCMOS33;
+NET "MII_RX_CLK" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "MII_TX_CLK" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "MII_RX_DV"   LOC = "V2"  | IOSTANDARD = LVCMOS33;
+NET "MII_RXD<0>"  LOC = "V8"  | IOSTANDARD = LVCMOS33;
+NET "MII_RXD<1>"  LOC = "T11" | IOSTANDARD = LVCMOS33;
+NET "MII_RXD<2>"  LOC = "U11" | IOSTANDARD = LVCMOS33;
+NET "MII_RXD<3>"  LOC = "V14" | IOSTANDARD = LVCMOS33;
+NET "MII_RX_ER"   LOC = "U14" | IOSTANDARD = LVCMOS33; # (Eski "E_RXD<4>")
+
+# TX Grubu (Senin doğru pin konumların: T7, P15, R11, T15, R5, T5)
+NET "MII_TX_CLK"  LOC = "T7"  | IOSTANDARD = LVCMOS33;
+NET "MII_TX_EN"   LOC = "P15" | IOSTANDARD = LVCMOS33;
+NET "MII_TXD<0>"  LOC = "R11" | IOSTANDARD = LVCMOS33;
+NET "MII_TXD<1>"  LOC = "T15" | IOSTANDARD = LVCMOS33;
+NET "MII_TXD<2>"  LOC = "R5"  | IOSTANDARD = LVCMOS33;
+NET "MII_TXD<3>"  LOC = "T5"  | IOSTANDARD = LVCMOS33;
+# NET "MII_TX_ER" LOC = "R6" | IOSTANDARD = LVCMOS33; # Kullanılmıyor (GitHub ethernet_mac IP'sinde MII modda TX_ER sinyali yok)
+
+# MDIO Grubu (Senin doğru pin konumların: P9, U5)
+NET "MDC"  LOC = "P9"  | IOSTANDARD = LVCMOS33;
+NET "MDIO" LOC = "U5"  | IOSTANDARD = LVCMOS33;
+
+#==============================================================
+# Switch Girişleri (4-bit değer seçimi için)
+#==============================================================
+NET "SW<0>" LOC = "L13" | IOSTANDARD = LVTTL | PULLUP;
+NET "SW<1>" LOC = "L14" | IOSTANDARD = LVTTL | PULLUP;
+NET "SW<2>" LOC = "H18" | IOSTANDARD = LVTTL | PULLUP;
+NET "SW<3>" LOC = "N17" | IOSTANDARD = LVTTL | PULLUP;
+
+#==============================================================
+# LED Çıkışları
+# LED<7>   : RX aktivitesi (veri geldi mi?)
+# LED<6:4> : Debug (şimdilik boş)
+# LED<3:0> : Switch değerleri (feedback)
+#==============================================================
+NET "LED<7>" LOC = "F9"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "LED<6>" LOC = "E9"  | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "LED<5>" LOC = "D11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "LED<4>" LOC = "C11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "LED<3>" LOC = "F11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "LED<2>" LOC = "E11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "LED<1>" LOC = "E12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;
+NET "LED<0>" LOC = "F12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8;

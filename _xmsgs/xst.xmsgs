@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">85</arg>. Redeclaration of symbol <arg fmt="%s" index="3">SW</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">86</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_RX_CLK</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">87</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_RXD</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">88</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_RX_DV</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">89</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_RX_ER</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">90</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_TX_CLK</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">91</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_TXD</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">92</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_TX_EN</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">93</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MII_TX_ER</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">94</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MDC</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">95</arg>. Redeclaration of symbol <arg fmt="%s" index="3">MDIO</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">96</arg>. Redeclaration of symbol <arg fmt="%s" index="3">o_phy_reset_n</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1202" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">97</arg>. Redeclaration of symbol <arg fmt="%s" index="3">LED</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">122</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_SW</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">122</arg>. <arg fmt="%s" index="3">i_SW</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">123</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_RX_CLK</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">123</arg>. <arg fmt="%s" index="3">i_MII_RX_CLK</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">124</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_RXD</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">124</arg>. <arg fmt="%s" index="3">i_MII_RXD</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">125</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_RX_DV</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">125</arg>. <arg fmt="%s" index="3">i_MII_RX_DV</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">126</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_RX_ER</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">126</arg>. <arg fmt="%s" index="3">i_MII_RX_ER</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">127</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_TX_CLK</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">127</arg>. <arg fmt="%s" index="3">i_MII_TX_CLK</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">128</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_TXD</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">128</arg>. <arg fmt="%s" index="3">i_MII_TXD</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">129</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_TX_EN</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">129</arg>. <arg fmt="%s" index="3">i_MII_TX_EN</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">130</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MII_TX_ER</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">130</arg>. <arg fmt="%s" index="3">i_MII_TX_ER</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">131</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MDC</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">131</arg>. <arg fmt="%s" index="3">i_MDC</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">132</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_MDIO</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">132</arg>. <arg fmt="%s" index="3">i_MDIO</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">133</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_o_phy_reset_n</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">133</arg>. <arg fmt="%s" index="3">i_o_phy_reset_n</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="3312" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">134</arg>. Undefined symbol &apos;<arg fmt="%s" index="3">i_LED</arg>&apos;.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1209" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">134</arg>. <arg fmt="%s" index="3">i_LED</arg>: Undefined symbol (last report in this block)
+</msg>
+
+<msg type="error" file="HDLParsers" num="837" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_146/hft/top.vhd</arg>&quot; Line <arg fmt="%d" index="2">141</arg>. Width mismatch. Expected width <arg fmt="%u" index="3">2</arg>, Actual width is <arg fmt="%u" index="4">4</arg> for dimension <arg fmt="%d" index="5">1</arg> of <arg fmt="%s" index="6">SW</arg>.
+</msg>
+
+</messages>
+

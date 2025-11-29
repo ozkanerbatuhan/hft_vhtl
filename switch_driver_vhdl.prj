@@ -1,0 +1,2 @@
+vhdl ethernet_mac "/home/ise/ISE_146/hft/ethernet/ethernet_mac/ethernet_types.vhd"
+vhdl work "/home/ise/ISE_146/hft/ethernet/switch_driver.vhd"

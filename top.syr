@@ -1,0 +1,198 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.00 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.00 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/utility.vhd" in Library ethernet_mac.
+Architecture utility of Entity utility is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/crc.vhd" in Library ethernet_mac.
+Architecture crc of Entity crc is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/ethernet_types.vhd" in Library ethernet_mac.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/miim_types.vhd" in Library ethernet_mac.
+Architecture miim_types of Entity miim_types is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/crc32.vhd" in Library ethernet_mac.
+Architecture crc32 of Entity crc32 is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/miim_registers.vhd" in Library ethernet_mac.
+Architecture miim_registers of Entity miim_registers is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/framing_common.vhd" in Library ethernet_mac.
+Architecture framing_common of Entity framing_common is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/reset_generator.vhd" in Library ethernet_mac.
+Architecture rtl of Entity reset_generator is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/single_signal_synchronizer.vhd" in Library ethernet_mac.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/mii_gmii.vhd" in Library ethernet_mac.
+Architecture rtl of Entity mii_gmii is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/mii_gmii_io.vhd" in Library ethernet_mac.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/framing.vhd" in Library ethernet_mac.
+Architecture rtl of Entity framing is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/miim.vhd" in Library ethernet_mac.
+Architecture rtl of Entity miim is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/miim_control.vhd" in Library ethernet_mac.
+Architecture rtl of Entity miim_control is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ann/sigmoid_functions.vhd" in Library work.
+Architecture sigmoid_functions of Entity sigmoid_functions is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/ethernet_mac/ethernet.vhd" in Library ethernet_mac.
+Architecture rtl of Entity ethernet is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ann/xor_network.vhd" in Library work.
+Architecture behavioral of Entity xor_network is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/switch_driver.vhd" in Library work.
+Architecture behavioral of Entity switch_driver is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/led_driver.vhd" in Library work.
+Architecture behavioral of Entity led_driver is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ethernet/top.vhd" in Library work.
+Architecture behavioral of Entity ethernet_top is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/ann/main.vhd" in Library work.
+Architecture behavioral of Entity xor_ann is up to date.
+Compiling vhdl file "/home/ise/ISE_146/hft/top.vhd" in Library work.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 85. Redeclaration of symbol SW.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 86. Redeclaration of symbol MII_RX_CLK.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 87. Redeclaration of symbol MII_RXD.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 88. Redeclaration of symbol MII_RX_DV.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 89. Redeclaration of symbol MII_RX_ER.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 90. Redeclaration of symbol MII_TX_CLK.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 91. Redeclaration of symbol MII_TXD.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 92. Redeclaration of symbol MII_TX_EN.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 93. Redeclaration of symbol MII_TX_ER.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 94. Redeclaration of symbol MDC.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 95. Redeclaration of symbol MDIO.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 96. Redeclaration of symbol o_phy_reset_n.
+ERROR:HDLParsers:1202 - "/home/ise/ISE_146/hft/top.vhd" Line 97. Redeclaration of symbol LED.
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 122. Undefined symbol 'i_SW'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 122. i_SW: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 123. Undefined symbol 'i_MII_RX_CLK'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 123. i_MII_RX_CLK: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 124. Undefined symbol 'i_MII_RXD'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 124. i_MII_RXD: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 125. Undefined symbol 'i_MII_RX_DV'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 125. i_MII_RX_DV: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 126. Undefined symbol 'i_MII_RX_ER'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 126. i_MII_RX_ER: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 127. Undefined symbol 'i_MII_TX_CLK'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 127. i_MII_TX_CLK: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 128. Undefined symbol 'i_MII_TXD'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 128. i_MII_TXD: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 129. Undefined symbol 'i_MII_TX_EN'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 129. i_MII_TX_EN: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 130. Undefined symbol 'i_MII_TX_ER'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 130. i_MII_TX_ER: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 131. Undefined symbol 'i_MDC'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 131. i_MDC: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 132. Undefined symbol 'i_MDIO'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 132. i_MDIO: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 133. Undefined symbol 'i_o_phy_reset_n'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 133. i_o_phy_reset_n: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "/home/ise/ISE_146/hft/top.vhd" Line 134. Undefined symbol 'i_LED'.
+ERROR:HDLParsers:1209 - "/home/ise/ISE_146/hft/top.vhd" Line 134. i_LED: Undefined symbol (last report in this block)
+ERROR:HDLParsers:837 - "/home/ise/ISE_146/hft/top.vhd" Line 141. Width mismatch. Expected width 2, Actual width is 4 for dimension 1 of SW.
+--> 
+
+
+Total memory usage is 592608 kilobytes
+
+Number of errors   :   40 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

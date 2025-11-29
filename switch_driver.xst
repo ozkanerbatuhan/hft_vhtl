@@ -1,0 +1,5 @@
+set -tmpdir "/home/ise/ISE_146/hft/xst/projnav.tmp"
+set -xsthdpdir "/home/ise/ISE_146/hft/xst"
+elaborate
+-ifn switch_driver.prj
+-ifmt mixed
